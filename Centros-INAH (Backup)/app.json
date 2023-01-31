@@ -1,0 +1,39 @@
+{
+  "expo": {
+    "name": "Centros-INAH",
+    "slug": "Centros-INAH",
+    "version": "1.0.1",
+    "orientation": "portrait",
+    "icon": "./assets/INAH-Logo-(Dark).png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#192229"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/INAH-Logo-(Dark).png",
+        "backgroundColor": "#FFFFFF"
+      },
+      "package": "com.brandonaov.CentrosINAH"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "f4b43d41-8999-4a7a-9df2-ccf8627b59a3"
+      }
+    }
+  }
+}
