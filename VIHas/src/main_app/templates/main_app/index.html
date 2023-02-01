@@ -1,0 +1,83 @@
+{% extends "main_app/base.html" %}
+
+<<<<<<< HEAD
+
+{% block content %}
+
+        <hr>
+        <script>
+          swal('¡Bienvenido!','Estamos aqui para ayudarte');
+        </script>
+
+        <!-- Showcase -->
+        <header class="showcase" color: white>
+            <h2>Centro de Atención Integral en VIH-SIDA, A.C.</h2>
+            <p>
+              Somos una organización de la sociedad civil que contribuye a generar una cultura de respeto e inclusión frente a la realidad social del VIH</p>
+            <a href="{%url 'acerca'%}" class="btn">Leer más <i class="fas fa-angle-double-right"></i></a>
+        </header>
+        <!-- Cards -->
+        <div class="blog-cards">
+            <div>
+                <a href="{% url 'preguntas_page' %}">
+                    <img src="https://i1.wp.com/www.yentelman.com/wp-content/uploads/2018/06/doubt-hesitate.jpg?ssl=1" alt="blog card">
+                    <h3 style="text-align: center;">Preguntas Frecuentes.</h3>
+                    <p style="margin: 5px;">En esta página te enseñamos lo que necesitas saber sobre el VIH y cómo tratar con ello, así como las preguntas más comunes.</p>
+                    <p class="btn-blog-cards" style="text-align: right;">
+                        Leer más <i class="fas fa-angle-double-right"></i>
+                    </p>
+                </a>
+            </div>
+            <div>
+                <a href="{% url 'prueba_page' %}">
+                    <img src="https://espaciociencia.com//wp-content/uploads/laboratorio-analisis.jpg" alt="blog card">
+                    <h3 style="text-align: center;">Hazte la Prueba</h3>
+                    <p style="margin: 5px;">Recuerda que si tienes una práctica de riesgo, a partir del tercer mes ya puedes realizarte una prueba rápida de detección de VIH.</p>
+                    <p class="btn-blog-cards" style="text-align: right;">
+                        Leer más <i class="fas fa-angle-double-right"></i>
+                    </p>
+                </a>
+            </div>
+            <div>
+                <a href="{% url 'acerca' %}">
+                    <img src="https://www.examenonuvenezuela.com/web/wp-content/uploads/2015/06/2015_sociedad-cvil.jpeg" alt="blog card">
+                    <h3 style="text-align: center;">Acerca de Nosotros</h3>
+                    <p style="margin: 5px;">Somos una organización de la sociedad civil que contribuye a generar una cultura de respeto frente a la realidad social del VIH.</p>
+                    <p class="btn-blog-cards" style="text-align: right;">
+                        Leer más <i class="fas fa-angle-double-right"></i>
+                    </p>
+                </a>
+            </div>
+            <div>
+                <a href="{% url 'donation_page' %}">
+                    <img src="https://www.telesurtv.net/__export/1629929052297/sites/telesur/img/2021/08/25/donantes.jpg_1718483346.jpg" alt="blog card">
+                    <h3 style="text-align: center;">Haz una Donación</h3>
+                    <p style="margin: 5px;">Con tu donación ayudarás a que esta asociación mejore y crezca para seguir apoyando a las personas con VIH. ¡Haz la diferencia!</p>
+                    <p class="btn-blog-cards" style="text-align: right;">
+                        Leer más <i class="fas fa-angle-double-right"></i>
+                    </p>
+                </a>
+
+            </div>
+
+
+        </div>
+
+
+        <hr>
+
+        <div class="album">
+          <img src="https://pbs.twimg.com/media/D-WDjROXoAYeNqz.jpg" class="album_img">
+          <img src="https://corresponsalesclave.org/wp-content/uploads/2013/03/Lupita_3-1.jpg" class="album_img">
+          <img src="http://udgtv.com/wp-content/uploads/2018/05/VIHas-de-Vida-Youtube.jpg" class="album_img">
+          <img src="https://scontent.fgdl10-1.fna.fbcdn.net/v/t1.6435-9/65386830_10156497455783310_5823742578385747968_n.jpg?_nc_cat=101&ccb=1-6&_nc_sid=730e14&_nc_eui2=AeG3LPFuhQDEBNg-S2lBLVxMc3aO8nG38ZJzdo7ycbfxkj805gRHItyHpx3MTdQUe9k&_nc_ohc=nP2HMAyc3kwAX8UgP3E&_nc_ht=scontent.fgdl10-1.fna&oh=00_AT-NNG_YjYpJSUWJGyLyrdFBmNEU5_jWXl13KtHghF_g7w&oe=62A507EE" class="album_img">
+          <img src="https://imagenes.milenio.com/7cOP1fBZg_GjMXKiejGYuQYHVRE=/936x566/https://www.milenio.com/uploads/media/2013/12/01/lucha-sociedad-civil-paso-buscar.jpeg" class="album_img">
+          <img src="https://0901.static.prezi.com/preview/v2/ke6raultqxngh7y5h6q3tmskul6jc3sachvcdoaizecfr3dnitcq_3_0.png" class="album_img">
+        </div>
+
+        <hr>
+
+        <div class="">
+
+        </div>
+{% endblock content %}

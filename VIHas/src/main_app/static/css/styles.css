@@ -1,0 +1,389 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    color: black;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+ul{
+    list-style: none;
+}
+
+h1{
+  text-align: center;
+}
+
+.img_acerca{
+  width:50%;
+  height:auto;
+  border-radius:90px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+}
+
+.img_donar{
+  width:50%;
+  height:600px;
+  border-radius:5px;
+  /*Centrar*/
+  display: block;
+  margin: 0px auto;
+}
+
+.header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size:cover;
+  background-position:bottom;
+  position:inherit
+}
+
+.container{
+    width: 90%;
+    margin: auto;
+}
+
+/* Navigation */
+.nav-main{
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 30px;
+    width: 100%;
+    padding: 20px;
+    background-color: #FFF;
+    position: fixed;
+    top: 0;
+}
+
+.nav-brand{
+  width: 40px;
+}
+
+/* NAV LEFT */
+.nav-main ul{
+    display:inline-flex;
+    list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+
+}
+
+.nav-main ul li{
+    padding: 10px;
+}
+
+.nav-main ul li a{
+    padding: 8px;
+    font-weight: bold;
+    font-family: 'Raleway', sans-serif;
+    display: block;
+
+}
+
+.nav-main ul li a:hover{
+    color: red;
+    background-color: rgb(240, 236, 236);
+
+}
+
+/* .nav-main ul.nav-menu {
+    flex: 1;
+    margin-left: 20px;
+}
+*/
+
+/* showcase */
+
+hr{
+    margin: 15px 0px;
+}
+
+.showcase{
+    width: 100 ;
+    /* background-color: #D5CAD6; */
+    height: 550px;
+    background: url("https://www.huesped.org.ar/wp-content/uploads/2021/06/bqcqgzquu5ayrefnor2j24adh4.jpg") no-repeat center center/cover;
+    padding-bottom: 50px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    border-radius: 1%;
+    color: white;
+}
+
+.btn{
+    cursor:pointer;
+    display: inline-block;
+    border: 0;
+    font-weight: bold;
+    padding: 10px 20px;
+    background: #FFFFFF;
+    border-radius: 2%;
+    font-size: 20px;
+    border: 2px solid black;
+    margin: 15px 0px;
+}
+
+.btn:hover{
+    opacity: 0.75;
+}
+
+.showcase h2,
+.showcase p{
+    margin-bottom: 10px;
+    margin-right: 15px;
+    margin-left: 15px;
+    text-align: center;
+    color: inherit;
+}
+
+
+/* Blog Cards */
+
+.blog-cards{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    background-color: #fff;
+}
+
+.blog-cards img{
+    width: 100%;
+    height: 180px;
+    border-radius: 1%;
+}
+
+.blog-cards h3{
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 10px 0px;
+    font-family: 'Raleway', sans-serif;
+}
+
+
+.blog-cards a{
+    padding: 0 0;
+    color: black;
+}
+
+.blog-cards p{
+    text-align: justify;
+    font-size: 17px;
+}
+
+.btn-blog-cards{
+    font-weight: bold;
+    padding: 5px;
+    font-size: 18px;
+    text-align: end;
+}
+
+.btn-blog-cards:hover{
+    text-decoration: underline;
+}
+
+.album_img{
+  width: 33%;
+  height: 300px;
+}
+
+.contacto{
+  text-decoration: none;
+  padding: 10px;
+  font-weight: 600;
+  font-size: 20px;
+  color: #ffffff;
+  background-color: #1883ba;
+  border-radius: 6px;
+  border: 2px solid #0016b0;
+  position: relative;
+  left: 43.5%;
+}
+
+.contacto:hover{
+  color: #1883ba;
+  background-color: #ffffff;
+}
+
+/* Social */
+footer{
+    background-color: #eeee;
+    margin: 20%;
+
+}
+
+.social {
+    margin: 50px;
+}
+
+.social p{
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.links{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.links a{
+    margin: 0 30px;
+
+}
+
+.links a i{
+    font-size: 3rem;
+}
+
+
+
+/*FOOTER*/
+
+footer {
+    background: #16222A;
+    background: -webkit-linear-gradient(59deg, #3A6073, #16222A);
+    background: linear-gradient(59deg, #3A6073, #16222A);
+    color: white;
+    margin-top:100px;
+  }
+
+  footer a {
+    color: #fff;
+    font-size: 14px;
+    transition-duration: 0.2s;
+  }
+
+  footer a:hover {
+    color: #FA944B;
+    text-decoration: none;
+  }
+
+  .copy {
+    font-size: 12px;
+    padding: 10px;
+    border-top: 1px solid #FFFFFF;
+  }
+
+  .footer-middle {
+    padding-top: 2em;
+    color: white;
+  }
+
+
+  /*SOCİAL İCONS*/
+
+  /* footer social icons */
+
+  ul.social-network {
+    list-style: none;
+    display: inline;
+    margin-left: 0 !important;
+    padding: 0;
+  }
+
+  ul.social-network li {
+    display: inline;
+    margin: 0 5px;
+  }
+
+
+  /* footer social icons */
+
+  .social-network a.icoFacebook:hover {
+    background-color: #3B5998;
+  }
+
+  .social-network a.icoLinkedin:hover {
+    background-color: #007bb7;
+  }
+
+  .social-network a.icoFacebook:hover i,
+  .social-network a.icoLinkedin:hover i {
+    color: #fff;
+  }
+
+  .social-network a.socialIcon:hover,
+  .socialHoverClass {
+    color: #44BCDD;
+  }
+
+  .social-circle li a {
+    display: inline-block;
+    position: relative;
+    margin: 0 auto 0 auto;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    font-size: 15px;
+  }
+
+  .social-circle li i {
+    margin: 0;
+    line-height: 30px;
+    text-align: center;
+  }
+
+  .social-circle li a:hover i,
+  .triggeredHover {
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -ms--transform: rotate(360deg);
+    transform: rotate(360deg);
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    transition: all 0.2s;
+  }
+
+  .social-circle i {
+    color: #595959;
+    -webkit-transition: all 0.8s;
+    -moz-transition: all 0.8s;
+    -o-transition: all 0.8s;
+    -ms-transition: all 0.8s;
+    transition: all 0.8s;
+  }
+
+  .social-network a {
+    background-color: #F9F9F9;
+  }
+
+  .formulario{
+    width: 880px;
+    background: #41E0E5;
+    padding: 30px;
+    border-radius: 4px;
+  }
+
+  .boton{
+    width: 95%;
+    background: #B5C1C1;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    border: 1px solid #BEF0EE;
+    font-size: 18px;
+  }
