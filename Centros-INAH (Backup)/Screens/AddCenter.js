@@ -1,0 +1,201 @@
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { StyleSheet, Text, TouchableOpacity, View, Image, TextInput, Button, Alert} from 'react-native';
+import { useState } from 'react';
+
+async function insertState(state) {
+    const url = 'https://projectatp.000webhostapp.com/SSPBD/InsertEstado.php';
+    const query = `?state=${state}`;
+
+    const petition = await fetch(url+query);
+    const response = petition.text();
+
+    console.log(1);
+}
+
+async function insertMunicipality(state, municipality) {
+    const url = 'https://projectatp.000webhostapp.com/SSPBD/InsertMunicipio.php';
+    const query = `?state=${state}&municipality=${municipality}`;
+
+    const petition = await fetch(url+query);
+    const response = petition.text();
+    console.log(2);
+}
+
+async function insertCenterType(centerType) {
+    const url = 'https://projectatp.000webhostapp.com/SSPBD/InsertCenterType.php';
+    const query = `?centerType=${centerType}`;
+
+    const petition = await fetch(url+query);
+    const response = petition.text();
+    console.log(3);
+}
+
+async function insertCenter(centerName, municipality, centerType, imageURL) {
+    const url = 'https://projectatp.000webhostapp.com/SSPBD/InsertCentro.php';
+    const query = `?centerName=${centerName}&municipality=${municipality}&centerType=${centerType}&imageURL=${imageURL}`;
+
+    const petition = await fetch(url+query);
+    const response = petition.text();
+    console.log(4);
+}
+
+export default function AddCenter({navigation}) {
+    const [imageURL, setImageURL] = useState(null);
+    const [centerName, setCenterName] = useState('Nombre del Centro');
+    const [state, setState] = useState('Estado');
+    const [municipality, setMunicipality] = useState('Municipio');
+    const [centerType, setCenterType] = useState('Tipo de Centro');
+
+    return (
+        <SafeAreaView style={styles.mainContainer}>
+            <Text style={{fontSize: 20, fontWeight: '600', color: '#EFF3F5', marginBottom: 20}}>Añadir Centro</Text>
+            <View style={styles.cardContainer}>
+                <View style={styles.cardImageContainer}>
+                    <Image
+                        style={styles.Image}
+                        source={{uri: imageURL}}
+                    />
+                </View>
+                <View style={styles.cardCiteInfo}>
+                    <Text style={{fontSize: 22, fontWeight: '600', color:'#EFF3F5'}}>{centerName}</Text>
+                    <Text style={{fontSize: 16, marginTop: 5, color: '#C8CDD0'}}>{state}, {municipality}</Text>
+                    <Text style={{fontSize: 16, marginTop: 5, color: '#C8CDD0'}}>{centerType}</Text>
+                    <TouchableOpacity
+                        style={styles.cardInfoSubmit} 
+                        onPress={ async () => {
+                            if(imageURL == null && centerName == 'Nombre del Centro' && state == 'Estado'  && municipality == 'Municipio' && centerType == 'Tipo de Centro'){
+                                Alert.alert('Datos Insuficientes', 'Ingresa todos los campos para agregar...', [{text: 'Ok'}], {cancelable: true});
+                            } else {
+                                await insertState(state);
+                                await insertMunicipality(state, municipality);
+                                await insertCenterType(centerType);
+                                await insertCenter(centerName, municipality, centerType, imageURL);
+                            }
+                        }}
+                    >
+                        <Image
+                            style={{width: 30, height: 30}}
+                            source={require('../assets/Icons/Check_Circle_icon.png')}
+                        />
+                    </TouchableOpacity>
+                </View>
+            </View>
+
+            <View style={styles.inputsContainer}>
+                <TextInput
+                    style={styles.inputsContainer_Input}
+                    placeholder='URL de Imagen...'
+                    placeholderTextColor={'#C8CDD0'}
+                    onChangeText={(text) => {
+                        (text)? setImageURL(text) : setImageURL(null);
+                    }}
+                />
+
+                <TextInput
+                    style={styles.inputsContainer_Input}
+                    placeholder='Nombre del Centro...'
+                    placeholderTextColor={'#C8CDD0'}
+                    onChangeText={(text) => {
+                        (text)? setCenterName(text) : setCenterName('Nombre del Centro');
+                    }}
+                />
+
+                <TextInput
+                    style={styles.inputsContainer_Input}
+                    placeholder='Estado...'
+                    placeholderTextColor={'#C8CDD0'}
+                    onChangeText={(text) => {
+                        (text)? setState(text) : setState('Estado');
+                    }}
+                />
+
+                <TextInput
+                    style={styles.inputsContainer_Input}
+                    placeholder='Municipio...'
+                    placeholderTextColor={'#C8CDD0'}
+                    onChangeText={(text) => {
+                        (text)? setMunicipality(text) : setMunicipality('Municipio');
+                    }}
+                />
+
+                <TextInput
+                    style={styles.inputsContainer_Input}
+                    placeholder='Tipo de Centro...'
+                    placeholderTextColor={'#C8CDD0'}
+                    onChangeText={(text) => {
+                        (text)? setCenterType(text) : setCenterType('Tipo de Centro');
+                    }}
+                />
+            </View>
+        </SafeAreaView>
+    );
+}
+
+const styles = StyleSheet.create({
+    mainContainer: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: '#192229',
+    },
+
+    cardContainer: {
+        display: 'flex',
+        width: '90%',
+        borderRadius: 16,
+        backgroundColor: '#2A3B47',
+        marginBottom: 30,
+    },
+
+    cardImageContainer: {
+        width: '100%',
+        height: 200,
+        borderTopLeftRadius: 16,
+        borderTopRightRadius: 16,
+        overflow: 'hidden',
+        backgroundColor: 'gray',
+    },
+
+    Image: {
+        width: '100%',
+        height: '100%',
+        resizeMode: 'stretch',
+    },
+
+    cardCiteInfo: {
+        padding: 15
+    },
+
+    cardInfoSubmit: {
+        width: 50,
+        height: 50,
+        justifyContent: 'center',
+        alignItems: 'center',
+        position: 'absolute',
+        right: 30,
+        top: '107%',
+        backgroundColor: '#6C4AB6',
+        borderRadius: 50,
+    },
+
+    inputsContainer: {
+        width: '90%',
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#212E36',
+        padding: 20,
+        borderRadius: 16,
+    },
+
+    inputsContainer_Input: {
+        width: '95%',
+        color: '#C8CDD0',
+        paddingVertical: 5,
+        paddingHorizontal: 20,
+        borderWidth: 1,
+        borderColor: '#2A3B47',
+        backgroundColor: '#2A3B47',
+        borderRadius: 100,
+        marginVertical: 10
+    }
+});
