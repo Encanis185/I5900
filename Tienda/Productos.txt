@@ -1,0 +1,4 @@
+3
+712Pep3 40|Pepsi|40|3 litros|17|0|12
+114Coc1 30|Coca cola|30|1 litro|4|5|20
+184Sev1 15|Seven|15|1 litro|6|20|5

@@ -1,0 +1,5 @@
+4
+Pepsi|5|65|135
+Coca cola|6|120|60
+Seven|4|20|28
+Pepsi|2|24|56
